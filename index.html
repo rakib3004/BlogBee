@@ -13,7 +13,6 @@
             text-align: center;
             padding: 6px;
             margin: 6px;
-            width: 45%;
             background-color: rgb(33,33,33);
             color: aliceblue;
             text-shadow: 2px 2px rgb(100,100,100);
@@ -21,15 +20,31 @@
             box-shadow: 0px 4px 100px black;  
             
         }
-      
+      .content1{
+          width: 50%;
+          float: left;
+      }
+      .content2{
+          margin-left: 50%;
+      }
     </style>
 </head>
 <body>
+
+    <div class="content1">
     <input type="file" name="inputfile"
     id="inputfile">
-<br>
+    <br>
+    <p id="output"></p>
+    </div>
 
-<p id="output"></p>
+    <div class="content2">
+        <input type="file" name="inputfile2"
+        id="inputfile2">
+        <br>
+        <p id="output2"></p>
+        </div>
+    
 
 
 <script type="text/javascript">
@@ -39,6 +54,18 @@ document.getElementById('inputfile')
     var fr=new FileReader();
     fr.onload=function(){
         document.getElementById('output')
+                .textContent=fr.result;
+    }
+      
+    fr.readAsText(this.files[0]);
+})
+
+document.getElementById('inputfile2')
+    .addEventListener('change', function() {
+      
+    var fr=new FileReader();
+    fr.onload=function(){
+        document.getElementById('output2')
                 .textContent=fr.result;
     }
       
