@@ -7,8 +7,9 @@ function handleAPILoaded() {
   function search() {
     var q = $('#query').val();
     var request = gapi.client.youtube.search.list({
-      q: q,
-      part: 'snippet'
+        q:q,
+        part:'snippet',
+        type:'video',
     });
   
     request.execute(function(response) {
