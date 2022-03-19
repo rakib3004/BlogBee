@@ -42,45 +42,12 @@
 
 
     <div class="content1">
-    <input type="file" name="inputfile"
-    id="inputfile">
-    <br>
-    <p id="output"></p>
-    </div>
-
-    <div class="content2">
-        <input type="file" name="inputfile2"
-        id="inputfile2">
-        <br>
-        <p id="output2"></p>
-        </div>
         <div><object data="content.txt"></object></div>
+        </div>
+        
 
 
-<script type="text/javascript">
-document.getElementById('inputfile')
-    .addEventListener('change', function() {
-      
-    var fr=new FileReader();
-    fr.onload=function(){
-        document.getElementById('output')
-                .textContent=fr.result;
-    }
-      
-    fr.readAsText(this.files[0]);
-})
 
-document.getElementById('inputfile2')
-    .addEventListener('change', function() {
-      
-    var fr=new FileReader();
-    fr.onload=function(){
-        document.getElementById('output2')
-                .textContent=fr.result;
-    }
-      
-    fr.readAsText(this.files[0]);
-})
 </script> 
 </body>
 </html>
